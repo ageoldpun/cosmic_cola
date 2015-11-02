@@ -1,0 +1,26 @@
+body {
+  background-image: url('background.jpeg');
+  background-color: #ccc;
+  background-size: cover;
+  color: gray;
+  font-family: 'Quantico', sans-serif;
+  padding: 0 2% 3%;
+}
+
+header {
+    padding-top: 0.3%;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+.no-background {
+  background: none;
+}
+
+.thumbnail {
+  background: rgba(240, 240, 240, 0.6);
+  text-align: center;
+}
