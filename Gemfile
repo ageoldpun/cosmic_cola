@@ -13,11 +13,15 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 group :development, :test do
-  gem 'byebug'
+    gem 'byebug'
+end
+
+group :test do
+    gem 'capybara'
+    gem 'capybara_minitest_spec'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+    gem 'web-console', '~> 2.0'
+    gem 'spring'
 end
-
