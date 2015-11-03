@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+ - "ruby-2.2.3"
+services:
+ - mysql
+script:
+ - rake db:test:prepare
+ - bundle exec rake
+before_script:
+ - mysql -e 'create database cosmic_cola_test'
