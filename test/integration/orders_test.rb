@@ -19,7 +19,6 @@ describe "Add to cart" do
         visit "/"
         click_button("12-pack")
         page.must_have_content("Cart (1)")
-        click_link("Cart (1)")
         page.must_have_content("12 Pack")
     end
 end

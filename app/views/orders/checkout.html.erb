@@ -25,7 +25,24 @@
             <div class="thumbnail">
                 <div class="caption">
                     <h3>Your cart currently contains:</h3>
-                    <p>Nothing.  <a href="/">Click here to remedy that.</a>
+                    <% if session[:cart_count] == 0 %>
+                        <p>Nothing.  <a href="/">Click here to remedy that.</a>
+                    <% else %>
+                        <table>
+                            <tr>
+                                <th>Quantity</th>
+                                <th>Item</th>
+                            </tr>
+                            <% session[:cart_contents].each do |item| %>
+                                <tr>
+                                    <td>#</td>
+                                    <td>
+                                        <%= item %>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </table>
+                    <% end %>
                 </div>
             </div>
         </div>
