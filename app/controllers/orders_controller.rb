@@ -12,8 +12,10 @@ class OrdersController < ApplicationController
     end
 
     def create
-        session[:cart_count] = session[:cart_count] + 1
-        session[:cart_contents].push(params[:type])
+        if session[:cart_contents].exclude?(params[:type])
+            session[:cart_count] += 1
+            session[:cart_contents].push(params[:type])
+        end
         @order = Order.new(params[:order])
         redirect_to "/checkout"
     end
