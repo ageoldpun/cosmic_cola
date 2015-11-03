@@ -19,4 +19,10 @@ class OrdersController < ApplicationController
         @order = Order.new(params[:order])
         redirect_to "/checkout"
     end
+
+    def submit
+        session[:cart_count] = 0
+        session[:cart_contents] = []
+        redirect_to "/complete"
+    end
 end

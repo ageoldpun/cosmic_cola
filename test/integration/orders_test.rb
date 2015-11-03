@@ -15,19 +15,12 @@ describe "Index" do
     end
 end
 
-describe "Add to cart" do
-    it "adds items to cart" do
-        visit "/"
-        click_button("12-pack")
-        page.must_have_content("Cart (1)")
-        page.must_have_content("12 Pack")
-    end
-end
-
 describe "Complete order" do
     it "can complete an order" do
         visit "/"
         click_button("12-pack")
+        page.must_have_content("Cart (1)")
+        page.must_have_content("12 Pack")
         fill_in("First Name", with: "Paul")
         fill_in("Last Name", with: "Ogden")
         fill_in("Address", with: "123 SW 1st Street")
@@ -35,6 +28,6 @@ describe "Complete order" do
         select("Oregon", from: "State")
         fill_in("Zip", with: "97205")
         click_button("Complete Order")
-        page.must_have_content("Order submitted successfully")
+        page.must_have_content("Your order was submitted successfully!")
     end
 end
