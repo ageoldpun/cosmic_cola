@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103045246) do
+ActiveRecord::Schema.define(version: 20151103051100) do
 
   create_table "orders", force: :cascade do |t|
-    t.integer "units", limit: 4
   end
 
 end

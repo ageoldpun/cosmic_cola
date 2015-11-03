@@ -1,6 +1,17 @@
 <header>
-    <a href="/"><div class="pull-left"><span class="glyphicon glyphicon-globe"> Home</div></a>
-    <a href="/checkout"><div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"> Cart</div></a>
+    <a href="/">
+        <div class="pull-left">
+            <span class="glyphicon glyphicon-globe"> Home
+        </div>
+    </a>
+    <a href="/checkout">
+        <div class="pull-right">
+            <span class="glyphicon glyphicon-shopping-cart"> Cart
+            <% if session[:cart_count] > 0 %>
+                (<%= session[:cart_count] %>)
+            <% end %>
+        </div>
+    </a>
 </header>
 <body>
     <div class="jumbotron no-background">
