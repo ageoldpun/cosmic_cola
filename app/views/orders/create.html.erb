@@ -17,7 +17,9 @@
                 <div class="caption">
                     <h3>12 Pack</h3>
                     <p>$21.99 Each</p>
-                    <p><button class="btn btn-primary" id="12-pack">Add To Cart</button></p>
+                    <%= button_to "orders", action: "create", class: "btn btn-primary", id: "12-pack" do %>
+                        Add To Cart
+                    <% end %>
                 </div>
             </div>
         </div>
@@ -26,7 +28,9 @@
                 <div class="caption">
                     <h3>24 Pack</h3>
                     <p>$39.99 Each</p>
-                    <p><button class="btn btn-primary" id="24-pack">Add To Cart</button></p>
+                    <%= button_to "orders", action: "create", class: "btn btn-primary", id: "24-pack" do %>
+                        Add To Cart
+                    <% end %>
                 </div>
             </div>
         </div>
