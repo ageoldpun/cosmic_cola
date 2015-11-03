@@ -23,3 +23,18 @@ describe "Add to cart" do
         page.must_have_content("12 Pack")
     end
 end
+
+describe "Complete order" do
+    it "can complete an order" do
+        visit "/"
+        click_button("12-pack")
+        fill_in("First Name", with: "Paul")
+        fill_in("Last Name", with: "Ogden")
+        fill_in("Address", with: "123 SW 1st Street")
+        fill_in("City", with: "Portland")
+        select("Oregon", from: "State")
+        fill_in("Zip", with: "97205")
+        click_button("Complete Order")
+        page.must_have_content("Order submitted successfully")
+    end
+end
