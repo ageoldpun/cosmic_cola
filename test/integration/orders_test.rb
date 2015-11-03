@@ -9,6 +9,7 @@ describe "Index" do
     end
 
     it "can navigate to /checkout" do
+        visit "/"
         click_link("Cart")
         page.must_have_content("Your Shopping Cart")
     end
