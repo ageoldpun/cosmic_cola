@@ -1,35 +1,35 @@
 <body>
-    <div class="jumbotron no-background">
-        <div class="container">
-            <h1>Cosmic Cola</h1>
-            <p>Cosmic Cola is the best tasting cola in the <span>UNIVERSE!</span> It is seriously OUT OF THIS WORLD!
-            Order yours today. We could run out any minute now.  Seriously.</p>
-        </div>
+  <div class="jumbotron no-background">
+    <div class="container">
+      <h1>Cosmic Cola</h1>
+      <p>Cosmic Cola is the best tasting cola in the <span>UNIVERSE!</span> It is seriously OUT OF THIS WORLD!
+      Order yours today. We could run out any minute now.  Seriously.</p>
     </div>
-    <div class="row">
-        <div class="col-sm-3 col-md-3"></div>
-        <div class="col-sm-3 col-md-3">
-            <div class="thumbnail text-center">
-                <div class="caption">
-                    <h3>12 Pack</h3>
-                    <p>$21.99 Each</p>
-                    <%= button_to "orders", action: "create", class: "btn btn-primary", params: {type: "12 Pack"}, id: "12-pack" do %>
-                        Add To Cart
-                    <% end %>
-                </div>
-            </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 col-md-3"></div>
+    <div class="col-sm-3 col-md-3">
+      <div class="thumbnail text-center">
+        <div class="caption">
+          <h3>12 Pack</h3>
+          <p>$21.99 Each</p>
+          <%= button_to "orders", action: "create", class: "btn btn-primary", params: {type: "12 Pack"}, id: "12-pack" do %>
+            Add To Cart
+          <% end %>
         </div>
-        <div class="col-sm-3 col-md-3">
-            <div class="thumbnail text-center">
-                <div class="caption">
-                    <h3>24 Pack</h3>
-                    <p>$39.99 Each</p>
-                    <%= button_to "orders", action: "create", class: "btn btn-primary", params: {type: "24 Pack"}, id: "24-pack" do %>
-                        Add To Cart
-                    <% end %>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 col-md-3"></div>
+      </div>
     </div>
+    <div class="col-sm-3 col-md-3">
+      <div class="thumbnail text-center">
+        <div class="caption">
+          <h3>24 Pack</h3>
+          <p>$39.99 Each</p>
+          <%= button_to "orders", action: "create", class: "btn btn-primary", params: {type: "24 Pack"}, id: "24-pack" do %>
+            Add To Cart
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-3"></div>
+  </div>
 </body>
