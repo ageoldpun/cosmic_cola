@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cosmic Cola</title>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= csrf_meta_tags %>
-        <link href='https://fonts.googleapis.com/css?family=Quantico:400italic,700italic' rel='stylesheet' type='text/css'>
-    </head>
-    <header>
-        <a href="/">
-            <div class="pull-left">
-                <span class="glyphicon glyphicon-globe"> Home
-            </div>
-        </a>
-        <a href="/checkout">
-            <div class="pull-right">
-                <span class="glyphicon glyphicon-shopping-cart"> Cart
-                <% if session[:cart_count] > 0 %>
-                    (<%= session[:cart_count] %>)
-                <% end %>
-            </div>
-        </a>
-    </header>
-    <body>
-        <%= yield %>
-    </body>
+  <head>
+    <title>Cosmic Cola</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Quantico:400italic,700italic' rel='stylesheet' type='text/css'>
+  </head>
+  <header>
+    <a href="/">
+      <div class="pull-left">
+        <span class="glyphicon glyphicon-globe"> Home
+      </div>
+    </a>
+    <a href="/checkout">
+      <div class="pull-right">
+        <span class="glyphicon glyphicon-shopping-cart"> Cart
+        <% if session[:cart_count] > 0 %>
+          (<%= session[:cart_count] %>)
+        <% end %>
+      </div>
+    </a>
+  </header>
+  <body>
+    <%= yield %>
+  </body>
 </html>

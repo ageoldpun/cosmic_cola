@@ -12,16 +12,16 @@ gem 'autoprefixer-rails'
 gem 'mysql'
 
 group :development, :test do
-    gem 'byebug'
-    gem 'yaml_db'
+  gem 'byebug'
+  gem 'yaml_db'
 end
 
 group :test do
-    gem 'capybara'
-    gem 'capybara_minitest_spec'
+  gem 'capybara'
+  gem 'capybara_minitest_spec'
 end
 
 group :development do
-    gem 'web-console', '~> 2.0'
-    gem 'spring'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
 end
