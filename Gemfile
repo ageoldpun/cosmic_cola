@@ -11,9 +11,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'mysql'
 
 group :development, :test do
     gem 'byebug'
+    gem 'yaml_db'
 end
 
 group :test do

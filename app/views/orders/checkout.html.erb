@@ -1,0 +1,51 @@
+<header>
+    <a href="/">
+        <div class="pull-left">
+            <span class="glyphicon glyphicon-globe"> Home
+        </div>
+    </a>
+    <a href="/checkout">
+        <div class="pull-right">
+            <span class="glyphicon glyphicon-shopping-cart"> Cart
+            <% if session[:cart_count] > 0 %>
+                (<%= session[:cart_count] %>)
+            <% end %>
+        </div>
+    </a>
+</header>
+<body>
+    <div class="jumbotron no-background">
+        <div class="container">
+            <h1>Your Shopping Cart</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-md-2"></div>
+        <div class="col-sm-8 col-md-8">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Your cart currently contains:</h3>
+                    <% if session[:cart_count] == 0 %>
+                        <p>Nothing.  <a href="/">Click here to remedy that.</a>
+                    <% else %>
+                        <table>
+                            <tr>
+                                <th>Quantity</th>
+                                <th>Item</th>
+                            </tr>
+                            <% session[:cart_contents].each do |item| %>
+                                <tr>
+                                    <td>#</td>
+                                    <td>
+                                        <%= item %>
+                                    </td>
+                                </tr>
+                            <% end %>
+                        </table>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-2"></div>
+    </div>
+</body>

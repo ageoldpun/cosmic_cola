@@ -1,6 +1,17 @@
 <header>
-    <a href="/"><div class="pull-left"><span class="glyphicon glyphicon-globe"> Home</div></a>
-    <a href="/checkout"><div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"> Cart</div></a>
+    <a href="/">
+        <div class="pull-left">
+            <span class="glyphicon glyphicon-globe"> Home
+        </div>
+    </a>
+    <a href="/checkout">
+        <div class="pull-right">
+            <span class="glyphicon glyphicon-shopping-cart"> Cart
+            <% if session[:cart_count] > 0 %>
+                (<%= session[:cart_count] %>)
+            <% end %>
+        </div>
+    </a>
 </header>
 <body>
     <div class="jumbotron no-background">
@@ -17,7 +28,9 @@
                 <div class="caption">
                     <h3>12 Pack</h3>
                     <p>$21.99 Each</p>
-                    <p><a class="btn btn-primary" id="12-pack" role="button">Add To Cart</a></p>
+                    <%= button_to "orders", action: "create", class: "btn btn-primary", params: {type: "12 Pack"}, id: "12-pack" do %>
+                        Add To Cart
+                    <% end %>
                 </div>
             </div>
         </div>
@@ -26,7 +39,9 @@
                 <div class="caption">
                     <h3>24 Pack</h3>
                     <p>$39.99 Each</p>
-                    <p><a class="btn btn-primary" id="24-pack" role="button">Add To Cart</a></p>
+                    <%= button_to "orders", action: "create", class: "btn btn-primary", params: {type: "24 Pack"}, id: "24-pack" do %>
+                        Add To Cart
+                    <% end %>
                 </div>
             </div>
         </div>
