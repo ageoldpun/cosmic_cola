@@ -9,4 +9,4 @@ Implementation requirements
 ---------------------------
 
 * Ruby 2.2.3
-* Must have mysql installed
+* MySQL
