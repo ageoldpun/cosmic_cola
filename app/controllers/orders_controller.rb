@@ -16,11 +16,11 @@ class OrdersController < ApplicationController
       session[:cart_count] += 1
       session[:cart_contents].push(params[:type])
     end
-    @order = Order.new(params[:order])
     redirect_to "/checkout"
   end
 
   def submit
+    OrderMailer.order(params).deliver_now
     session[:cart_count] = 0
     session[:cart_contents] = []
     redirect_to "/complete"

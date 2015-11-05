@@ -19,6 +19,7 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara_minitest_spec'
+  gem 'email_spec'
 end
 
 group :development do
