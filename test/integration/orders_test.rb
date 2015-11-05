@@ -1,4 +1,5 @@
-require 'test_helper'
+require "test_helper"
+require "email_spec"
 
 describe "Index" do
   it "loads the index" do
@@ -29,5 +30,11 @@ describe "Complete order" do
     fill_in("Zip", with: "97205")
     click_button("Complete Order")
     page.must_have_content("Your order was submitted successfully!")
+  end
+
+  it "sends an email" do
+    test_email = open_last_email
+    assert_match "Someone bought some of your cola", test_email.to_s
+    assert_match "123 SW 1st Street", test_email.to_s
   end
 end
