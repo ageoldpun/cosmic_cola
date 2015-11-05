@@ -12,6 +12,7 @@ gem 'autoprefixer-rails'
 gem 'mysql'
 
 group :development, :test do
+  gem 'pusher'
   gem 'byebug'
   gem 'yaml_db'
 end

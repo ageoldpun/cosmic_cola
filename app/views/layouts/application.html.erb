@@ -6,6 +6,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link href='https://fonts.googleapis.com/css?family=Quantico:400italic,700italic' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+
+    <!-- TODO Extract to its own js file -->
+    <script>
+      var pusher = new Pusher('689a7764fbc0fc8eec63', {
+        encrypted: true
+      });
+
+      var channel = pusher.subscribe('new_orders');
+
+      channel.bind('order', function(data) {
+        $("<p>"+data.firstName+" just bought themselves "+data.quantity+" "+data.type+" of Cosmic Cola!</p>").appendTo("#new-orders");
+      });
+    </script>
+
   </head>
   <header>
     <a href="/">

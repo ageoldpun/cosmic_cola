@@ -21,6 +21,9 @@ class OrdersController < ApplicationController
 
   def submit
     OrderMailer.order(params).deliver_now
+    Pusher.trigger('new_orders', 'order', {
+      message: params
+    })
     session[:cart_count] = 0
     session[:cart_contents] = []
     redirect_to "/complete"
