@@ -18,7 +18,7 @@
       var channel = pusher.subscribe('new_orders');
 
       channel.bind('order', function(data) {
-        $("<p>"+data.firstName+" just bought themselves "+data.quantity+" "+data.type+" of Cosmic Cola!</p>").appendTo("#new-orders");
+        $("<p>"+data.firstName+" just bought him/herself "+data.quantity+" "+data.type+" of Cosmic Cola!</p>").appendTo("#new-orders");
       });
     </script>
 
